@@ -1,60 +1,60 @@
-# Library Assistant System
+# 图书馆智能助手系统
 
-## Project Overview
-This is a complete Library Assistant System, which includes an upper-computer GUI application, a lower-computer embedded control program, and a serial communication module. It enables book location querying and automatic navigation.
+## 项目概述
+这是一个完整的图书馆智能助手系统，包含上位机GUI应用、下位机嵌入式控制程序和串口通信模块，实现图书位置查询和自动导航功能。
 
-## System Workflow:
-1. Users query book locations through the GUI.
-2. The system parses the book's area (A-F).
-3. Navigation instructions are sent to the lower-computer via serial communication.
-4. The lower-computer controls the vehicle to move to the specified area.
+## 系统工作流程
+1. 用户通过GUI查询图书位置。
+2. 系统解析图书所在区域（A-F）。
+3. 通过串口发送导航指令给下位机。
+4. 下位机控制小车移动到指定区域。
 
-## Features
+## 功能特点
 
-### Upper-Computer Features
-- Book location querying and display.
-- User-friendly graphical interface.
-- Real-time interactive dialogue.
-- Adjustable font size.
-- Quick access to hot topics.
-- Generation and sending of navigation instructions.
+### 上位机功能
+- 图书位置查询与展示
+- 用户友好的图形界面
+- 实时对话交互
+- 字体大小调整
+- 热门话题快速访问
+- 导航指令生成与发送
 
-### Lower-Computer Features
-- Precise control of four motors using PID.
-- Encoder speed feedback.
-- Forward/reverse PWM control.
-- Motor auto-calibration.
-- Speed synchronization algorithm.
+### 下位机功能
+- 四电机PID精确控制
+- 编码器速度反馈
+- 前进/后退双PWM控制
+- 电机自动校准
+- 速度同步算法
 
-### Communication Features
-- Hexadecimal instruction transmission.
-- Error detection and handling.
-- Response reception and parsing.
+### 通信功能
+- 16进制指令传输
+- 错误检测与处理
+- 响应接收与解析
 
-## File Structure
-Library-Assistant/  
-├── library_core.py # Core logic: Book data processing and API interaction  
-├── library_gui.py # Tkinter graphical user interface  
-├── main.py # Program entry point  
-├── serial_communicator.py # Serial communication module  
-├── pwm_test.c # Lower-computer motor control program  
-└── pwm_test.h # Lower-computer header file  
+## 文件结构
+图书馆-助手/  
+├── library_core.py # 核心逻辑：图书数据处理与API交互  
+├── library_gui.py # Tkinter图形用户界面  
+├── main.py # 程序入口  
+├── serial_communicator.py # 串口通信模块  
+├── pwm_test.c # 下位机电机控制程序  
+└── pwm_test.h # 下位机头文件  
 
-## Hardware Requirements
+## 硬件要求
 
-### Upper-Computer:
-- Python 3.7+ version
-- Computer with serial communication support
+### 上位机
+- Python 3.7+ 版本
+- 支持串口通信的计算机
 
-### Lower-Computer:
-- STM32F4 series development board
-- 4 DC motors with encoders
-- Motor drive module
-- USB to TTL serial module
+### 下位机
+- STM32F4系列开发板
+- 4个带编码器的直流电机
+- 电机驱动模块
+- USB转TTL串口模块
 
-## Installation and Usage
+## 安装与使用
 
-### Upper-Computer Installation
+### 上位机安装
 ```bash
 pip install tkinter
 pip install pyserial
